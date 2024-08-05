@@ -1,12 +1,15 @@
-let nums = [1,1,2]
-
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
 var removeDuplicates = function (nums) {
     let uniqueSet = new Set(nums);
     let uniqueArray = [...uniqueSet];
-    nums = uniqueArray
-    return nums;
+    uniqueArray.forEach((val, index) => {
+        nums[index] = val;
+    });
+    return uniqueArray.length;
 };
-console.log(removeDuplicates(nums))
 
 /**
  * Remove Duplicates from Sorted Array
